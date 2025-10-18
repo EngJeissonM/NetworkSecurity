@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/a0d11ca47e6a4a9ab959b65739f6d231/artifacts
+end_time: 1760669349306
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a0d11ca47e6a4a9ab959b65739f6d231
+run_name: calm-fox-76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760669320186
+status: 3
+tags: []
+user_id: MORALES-TC

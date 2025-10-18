@@ -1,0 +1,22 @@
+artifact_path: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/models/m-cb2e7a032d1c47fc94c1275a4f4b85a2/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.4.0
+model_id: m-cb2e7a032d1c47fc94c1275a4f4b85a2
+model_size_bytes: 13388639
+model_uuid: m-cb2e7a032d1c47fc94c1275a4f4b85a2
+prompts: null
+run_id: dc68dc3a0db14fb2a150989fd994ae97
+utc_time_created: '2025-10-17 02:49:10.126362'

@@ -1,2 +1,2 @@
-venv
+MONGO_DB_URL=mongodb+srv://jsmorales:ADMI1234@jeisson.sxonfwo.mongodb.net/?retryWrites=true&w=majority
 .env
