@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/5a0281a302124111975e8fdffbaad590/artifacts
+end_time: 1761012910112
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5a0281a302124111975e8fdffbaad590
+run_name: abundant-owl-67
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761012890224
+status: 3
+tags: []
+user_id: MORALES-TC

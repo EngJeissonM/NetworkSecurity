@@ -1,0 +1,10 @@
+artifact_location: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/models/m-2c5f402c209e4c6b8b3f73a2bebc8b7f/artifacts
+creation_timestamp: 1761014412915
+experiment_id: '0'
+last_updated_timestamp: 1761014424832
+model_id: m-2c5f402c209e4c6b8b3f73a2bebc8b7f
+model_type: null
+name: model
+source_run_id: 1cf8e3517412421392c0a30c1304962d
+status: 2
+status_message: null

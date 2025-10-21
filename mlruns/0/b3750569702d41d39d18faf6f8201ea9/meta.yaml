@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/b3750569702d41d39d18faf6f8201ea9/artifacts
+end_time: 1760827125451
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3750569702d41d39d18faf6f8201ea9
+run_name: stylish-fawn-460
+run_uuid: b3750569702d41d39d18faf6f8201ea9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760827103965
+status: 3
+tags: []
+user_id: MORALES-TC

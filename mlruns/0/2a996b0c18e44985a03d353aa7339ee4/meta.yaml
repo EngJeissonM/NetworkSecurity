@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/DS%20and%20ML%20BOOTCAMP/PYTHON/49.%20END%20TO%20END%20MLOPS%20WITH%20ETL%20PIPELINE%20.%20BUILDING%20NETWORK%20SECURITY%20SYSTEM/network_security/mlruns/0/2a996b0c18e44985a03d353aa7339ee4/artifacts
+end_time: 1761012920229
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2a996b0c18e44985a03d353aa7339ee4
+run_name: likeable-stork-291
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761012910272
+status: 3
+tags: []
+user_id: MORALES-TC
