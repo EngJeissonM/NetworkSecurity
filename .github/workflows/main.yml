@@ -13,8 +13,8 @@ permissions:
 
 jobs:
   integration:
-    name: Continuous Integration #CI from CI/CD PIPELINE
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner from GitHub Actions
+    name: Continuous Integration
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -26,9 +26,9 @@ jobs:
         run: echo "Running unit tests"
   
   build-and-push-ecr-image:
-    name: Continuous Delivery #This is CD from CI/CD PIPELINE
-    needs: integration # Waits for the CI job to complete successfully
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner from GitHub Actions
+    name: Continuous Delivery
+    needs: integration
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -37,27 +37,36 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID }} #This is from Secrets Manager
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY }} #This is from Secrets Manager
-          aws-region: ${{secrets.AWS_REGION }}               #This is from Secrets Manager
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Normalize repository name
+        run: |
+          REPO=$(echo "${{ secrets.ECR_REPOSITORY_NAME }}" | tr '[:upper:]' '[:lower:]')
+          echo "ECR_REPOSITORY=$REPO" >> $GITHUB_ENV
+
+      - name: Debug Tag (opcional pero útil)
+        run: |
+          echo "Registry: ${{ steps.login-ecr.outputs.registry }}"
+          echo "Repository: $ECR_REPOSITORY"
+          echo "Tag: latest"
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
-          ECR_REGISTRY: ${{steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{secrets.ECR_REPOSITORY_NAME }}
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
           IMAGE_TAG: latest
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
