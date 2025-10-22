@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   integration:
-    name: Continuous Integration CI from CI/CD PIPELINE
+    name: Continuous Integration #CI from CI/CD PIPELINE
     runs-on: ubuntu-latest # Use the latest Ubuntu runner from GitHub Actions
     steps:
       - name: Checkout Code
